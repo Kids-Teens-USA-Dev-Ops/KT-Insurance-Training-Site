@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowchart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b1b1b1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #B3FFB3;
+            border-radius: 10px;
+        }
+        h1 {
+            color: #656256;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            background-color: #DF80FF;
+            color: #230903;
+            border: 2px solid #656256;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
+        }
+        .btn.selected {
+            background-color: #8ACDEA;
+            color: white;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 300px; /* Increased image size */
+            height: auto;
+        }
+        .providerInfo img, .slci img {
+            max-width: 500px;
+        }
+        @media (max-width: 768px) {
+            .btn {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+            img {
+                max-width: 250px; /* Adjust for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">
+        <img src="logos.png" alt="Logo">
+    </div>
+
+    <h1>Insurance Transfers</h1>
+
+    <div id="step1" class="step">
+        <p>What Type of Insurance Does the Patient Have:</p>
+        <button class="btn" onclick="selectOption('a', 'step2-a', 'step1')">Medi-Cal</button>
+        <button class="btn" onclick="selectOption('b', 'step2-b', 'step1')">Commercial</button>
+    </div>
+
+    <div id="step2-a" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://provider-portal.apps.prd.cammis.medi-cal.ca.gov/email">medi-cal.ca.gov</a></p>
+        <br>
+        <p>Enter the patient's medi-cal id (or ssn), date of birth, <br> and date of service (today's date):</p>
+        <br>
+        <p>What is the Responsible County?:</p>
+        <button class="btn" onclick="selectOption('a1', 'step3-a1', 'step2-a')">19-Los Angeles</button>
+        <button class="btn" onclick="selectOption('a2', 'step3-a2', 'step2-a')">Other</button>
+    </div>
+
+    <div id="step2-b" class="step hidden">
+        <p>Select an Insurance Provider</p>
+        <button class="btn" onclick="selectOption('b1', 'step3-b1', 'step2-b')">La Care Covered CA</button>
+        <button class="btn" onclick="selectOption('b2', 'step3-b2', 'step2-b')">Health Net Commercial</button>
+        <button class="btn" onclick="selectOption('b3', 'step3-b3', 'step2-b')">Aetna</button>
+        <button class="btn" onclick="selectOption('b4', 'step3-b4', 'step2-b')">Blue Cross</button>
+        <button class="btn" onclick="selectOption('b5', 'step3-b5', 'step2-b')">Blue Shield</button>
+        <button class="btn" onclick="selectOption('b6', 'step3-b6', 'step2-b')">Cigna</button>
+        <button class="btn" onclick="selectOption('b7', 'step3-b7', 'step2-b')">United Healthcare</button>
+    </div>
+
+    <div id="step3-a1" class="step hidden">
+        <p>Are Any of the Following Aid Codes Present:</p>
+
+        <div class="container">
+            <div class="codes">
+                <img src="aid-codes.png" alt="Error">
+            </div>
+        </div>
+
+        <button class="btn" onclick="selectOption('a', 'step3-a1-a', 'step3-a1')">Yes</button>
+        <button class="btn" onclick="selectOption('b', 'step3-a1-b', 'step3-a1')">No</button>
+    </div>
+
+    <div id="step3-a2" class="step hidden">
+        <p>Do Not Transfer - Not in Los Angeles County</p>
+    </div>
+
+    <div id="step3-b1" class="step hidden">
+        <p>Step 3 (B1): You've selected B1. End of flow.</p>
+    </div>
+
+    <div id="step3-b2" class="step hidden">
+        <p>Step 3 (B2): You've selected B2. End of flow.</p>
+    </div>
+
+    <div id="step3-a1-a" class="step hidden">
+        <p>Do Not Transfer - High Risk Aid Code</p>
+    </div>
+
+    <div id="step3-a1-b" class="step hidden">
+        <p>Select a Partner</p>
+        <button class="btn" onclick="selectOption('hnet', 'healthnet', 'step3-a1-b')">HealthNet</button>
+        <button class="btn" onclick="selectOption('la-care', 'lacare', 'step3-a1-b')">La Care</button>
+        <button class="btn" onclick="selectOption('bluecross', 'availity-bc', 'step3-a1-b')">Blue Cross</button>
+        <button class="btn" onclick="selectOption('blueshield', 'lacare', 'step3-a1-b')">Blue Shield</button>
+        <button class="btn" onclick="selectOption('carefirst', 'lacare', 'step3-a1-b')">Care First</button>
+        <button class="btn" onclick="selectOption('molina', 'availity-molina', 'step3-a1-b')">Molina</button>
+        <button class="btn" onclick="selectOption('medi-cal-only', 'medi-only', 'step3-a1-b')">Medi-Cal Only</button>
+    </div>
+
+    <div id="lacare" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://www.lacare.org/providers">lacare.org</a></p>
+        <br>
+        <p>Is the patient assigned to <br><b>PPG: SERENDIB HEALTHYWAYS, INC</b>?<br> <br> and <br> <br><b>Primary Care Physician/Clinic:</b> One of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a> </p>
+        <br>
+        <button class="btn" onclick="selectOption('lacare-1-a', 'yes-la', 'lacare')">Yes</button>
+        <button class="btn" onclick="selectOption('lacare-1-b', 'no-la', 'lacare')">No</button>
+
+    </div>
+
+    <div id="yes-la" class="step hidden">
+        <p>Already Transfered</p>
+    </div>
+
+    <div id="no-la" class="step hidden">
+        <p>Transfer to Serendib La Care: Call (888) 839-9909</p>
+    </div>
+
+
+    <div id="availity-molina" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://apps.availity.com/web/onboarding/availity-fr-ui/#/login">availity.com</a></p>
+        <p>*Make sure that the Member's Name and <br> Date of Birth match what you have*</b></p>
+        <br>
+        <p>What is the <b>Member Status</b>?</p>
+        <br>
+        <button class="btn" onclick="selectOption('availity-molina-1', 'availity-molina-active', 'availity-molina')">Active Coverage</button>
+        <button class="btn" onclick="selectOption('availity-molina-2', 'availity-molina-inactive', 'availity-molina')">Inactive</button>
+    </div>
+
+    <div id="availity-molina-active" class="step hidden">
+        <p>Go to the section titled <b>Provider Information</b>:</p>
+        <br>
+        <div class="container">
+            <div class="providerInfo">
+                <img src="provider-info.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <p>Is the <b>"Pay to Affiliate"</b> listed as <b>SERENDIB HEALTHYWAYS</b>:</p>
+        <br>
+        <button class="btn" onclick="selectOption('availity-molina-active-1', 'availity-molina-active-yes', 'availity-molina-active')">Yes</button>
+        <button class="btn" onclick="selectOption('availity-molina-active-2', 'availity-molina-active-no', 'availity-molina-active')">No</button>
+    </div>
+
+    <div id="availity-molina-active-yes" class="step hidden">
+        <p>Under <b>Plan Maximums and Deductables</b> > <b>Service Level Contact Information</b>:</p>
+        <br>
+        <div class="container">
+            <div class="slci">
+                <img src="slci.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <p>Is the <b>Name</b> in this section that of one of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a> </p>
+        <button class="btn" onclick="selectOption('availity-molina-active-yes-1', 'availity-molina-active-yes-yes', 'availity-molina-active-yes')">Yes</button>
+        <button class="btn" onclick="selectOption('availity-molina-active-yes-2', 'availity-molina-active-yes-no', 'availity-molina-active-yes')">No</button>
+    </div>
+
+    <div id="availity-molina-active-yes-yes" class="step hidden">
+        <p>Already Transfered</p>
+    </div>
+
+    <div id="availity-molina-active-yes-no" class="step hidden">
+        <p>Transfer to Serendib Molina: Call (800) 526-8196</p>
+    </div>
+
+    <div id="availity-molina-active-no" class="step hidden">
+        <p>Transfer to Serendib Molina: Call (800) 526-8196</p>
+    </div>
+
+    <div id="availity-molina-inactive" class="step hidden">
+        <p>Inactive <br> (Peds offer CHDP for Physicals and Vaccines Only)</p>
+    </div>
+
+
+    <div id="availity-bc" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://apps.availity.com/web/onboarding/availity-fr-ui/#/login">availity.com</a></p>
+        <p>*Make sure that the Member's Name and <br> Date of Birth match what you have*</b></p>
+        <br>
+        <p>What is the <b>Member Status</b>?</p>
+        <br>
+        <button class="btn" onclick="selectOption('availity-bc-1', 'availity-bc-active', 'availity-bc')">Active Coverage</button>
+        <button class="btn" onclick="selectOption('availity-bc-2', 'availity-bc-inactive', 'availity-bc')">Inactive</button>
+    </div>
+
+    <div id="availity-bc-active" class="step hidden">
+        <p>Transfer to Serendib La Care: Call (888) 839-9909</p>
+    </div>
+
+    <div id="availity-bc-inactive" class="step hidden">
+        <p>Inactive <br> (Peds offer CHDP for Physicals and Vaccines Only)</p>
+    </div>
+
+
+    <div id="healthnet" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://sso.entrykeyid.com/as/authorization.oauth2?response_type=code&client_id=44eb17c3-cf1e-4479-a811-61d23ae8ffbd&scope=openid%20profile&state=83RLWrwyEmOdMbwT4t_G87-ycZtAgwdhKLCxjuntJ8g%3D&redirect_uri=https://provider.healthnetcalifornia.com/careconnect/login/oauth2/code/pingcloud&code_challenge_method=S256&nonce=91JhHNWtObeB_ar06n06Q6Syuiwpq2eqF7hV5RQ5-x4&code_challenge=QkJVgZYTqGO424tspNqCjgC_Cog2bHgWIOR376ilZ_Q&app_origin=https://provider.healthnetcalifornia.com/careconnect/login/oauth2/code/pingcloud&brand=healthnet">healthnetcalifornia.com</a></p>
+        <p>Under <b>PCP Information</b> is the <b>Name</b> of the PCP One of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a><br><br> and <br><br>Under <b>PPG Information</b> is the <b>Name</b> of the PPG <b>SERENDIB HEALTHYWAYS, INC</b>?</p>
+        <br>
+        <button class="btn" onclick="selectOption('healthnet-1-a', 'yes-hn', 'healthnet')">Yes</button>
+        <button class="btn" onclick="selectOption('healthnet-1-b', 'no-hn', 'healthnet')">No</button>
+    </div>
+
+    <div id="yes-hn" class="step hidden">
+        <p>Already Transfered</p>
+    </div>
+
+    <div id="no-hn" class="step hidden">
+        <p>Transfer to Serendib Molina: Call (800) 675-6110</p>
+    </div>
+
+    <div id="medi-only" class="step hidden">
+        <p>Transfer to Serendib Molina: Call (800) 526-8196</p>
+    </div>
+</div>
+
+<script>
+    function selectOption(option, nextStepId, currentStepId) {
+        // Hide all buttons of the current step
+        const currentStep = document.getElementById(currentStepId);
+        const buttons = currentStep.querySelectorAll('.btn');
+        
+        buttons.forEach(btn => {
+            if (btn.getAttribute('onclick').includes(option)) {
+                btn.classList.add('selected');
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+
+        // Show the next step
+        document.getElementById(nextStepId).classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
