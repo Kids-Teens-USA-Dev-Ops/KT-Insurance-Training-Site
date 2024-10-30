@@ -56,6 +56,18 @@
         .providerInfo img, .slci img {
             max-width: 500px;
         }
+        .EBG-menu img, .slci img {
+            max-width: 500px;
+        }
+        .EBG-top img, .slci img {
+            max-width: 575px;
+        }
+        .provider-info-com img, .slci img {
+            max-width: 575px;
+        }
+        .availity-sumbit img, .slci img {
+            max-width: 500px;
+        }
         @media (max-width: 768px) {
             .btn {
                 font-size: 16px;
@@ -94,13 +106,14 @@
 
     <div id="step2-b" class="step hidden">
         <p>Select an Insurance Provider</p>
-        <button class="btn" onclick="selectOption('b1', 'step3-b1', 'step2-b')">La Care Covered CA</button>
-        <button class="btn" onclick="selectOption('b2', 'step3-b2', 'step2-b')">Health Net Commercial</button>
-        <button class="btn" onclick="selectOption('b3', 'step3-b3', 'step2-b')">Aetna</button>
-        <button class="btn" onclick="selectOption('b4', 'step3-b4', 'step2-b')">Blue Cross</button>
+        <button class="btn" onclick="selectOption('b1', 'lacare-cm', 'step2-b')">La Care Covered CA</button>
+        <button class="btn" onclick="selectOption('b2', 'healthnet-cm', 'step2-b')">Health Net Commercial</button>
+        <button class="btn" onclick="selectOption('b3', 'availity-ca', 'step2-b')">Aetna</button>
+        <button class="btn" onclick="selectOption('b4', 'availity-cbc', 'step2-b')">Blue Cross</button>
         <button class="btn" onclick="selectOption('b5', 'step3-b5', 'step2-b')">Blue Shield</button>
         <button class="btn" onclick="selectOption('b6', 'step3-b6', 'step2-b')">Cigna</button>
         <button class="btn" onclick="selectOption('b7', 'step3-b7', 'step2-b')">United Healthcare</button>
+        <button class="btn" onclick="selectOption('b8', 'availity-cm', 'step2-b')">Molina Commercial</button>
     </div>
 
     <div id="step3-a1" class="step hidden">
@@ -120,16 +133,201 @@
         <p>Do Not Transfer - Not in Los Angeles County</p>
     </div>
 
-    <div id="step3-b1" class="step hidden">
-        <p>Step 3 (B1): You've selected B1. End of flow.</p>
+    <div id="lacare-cm" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://www.lacare.org/providers">lacare.org</a></p>
+        <br>
+        <p>Is the patient assigned to <br><b>PPG: SERENDIB HEALTHYWAYS, INC</b>?<br> <br> and <br> <br><b>Primary Care Physician/Clinic:</b> One of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a> </p>
+        <br>
+        <button class="btn" onclick="selectOption('lacarecm-1-a', 'yes-lacm', 'lacare-cm')">Yes</button>
+        <button class="btn" onclick="selectOption('lacarecm-1-b', 'no-lacm', 'lacare')">No</button>
+
     </div>
 
-    <div id="step3-b2" class="step hidden">
-        <p>Step 3 (B2): You've selected B2. End of flow.</p>
+    <div id="yes-lacm" class="step hidden">
+        <p>Already Transfered</p>
+    </div>
+
+    <div id="no-lacm" class="step hidden">
+        <p>Transfer to Serendib La Care: Call (888) 839-9909</p>
+    </div>
+
+    <div id="healthnet-cm" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://sso.entrykeyid.com/as/authorization.oauth2?response_type=code&client_id=44eb17c3-cf1e-4479-a811-61d23ae8ffbd&scope=openid%20profile&state=83RLWrwyEmOdMbwT4t_G87-ycZtAgwdhKLCxjuntJ8g%3D&redirect_uri=https://provider.healthnetcalifornia.com/careconnect/login/oauth2/code/pingcloud&code_challenge_method=S256&nonce=91JhHNWtObeB_ar06n06Q6Syuiwpq2eqF7hV5RQ5-x4&code_challenge=QkJVgZYTqGO424tspNqCjgC_Cog2bHgWIOR376ilZ_Q&app_origin=https://provider.healthnetcalifornia.com/careconnect/login/oauth2/code/pingcloud&brand=healthnet">healthnetcalifornia.com</a></p>
+        <p>Under <b>PCP Information</b> is the <b>Name</b> of the PCP One of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a><br><br> and <br><br>Under <b>PPG Information</b> is the <b>Name</b> of the PPG <b>SERENDIB HEALTHYWAYS, INC</b>?</p>
+        <br>
+        <button class="btn" onclick="selectOption('healthnetcm-1-a', 'yes-hncm', 'healthnet-cm')">Yes</button>
+        <button class="btn" onclick="selectOption('healthnetcm-1-b', 'no-hncm', 'healthnet-cm')">No</button>
+    </div>
+
+    <div id="yes-hncm" class="step hidden">
+        <p>Already Transfered</p>
+    </div>
+
+    <div id="no-hncm" class="step hidden">
+        <p>Transfer to Serendib Molina: Call (800) 675-6110</p>
+    </div>
+
+    <div id="availity-cm" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://apps.availity.com/web/onboarding/availity-fr-ui/#/login">availity.com</a></p>
+        <br>
+        <p>Go to the <b>Eligibility and Benefits Inquiry</b> page:</p>
+        <br>
+        <div class="container">
+            <div class="EBG-menu">
+                <img src="EBG-menu.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <button class="btn" onclick="selectOption('availity-c-next', 'availity-cmn', 'availity-cm')">Next</button>
+    </div>
+
+    <div id="availity-cmn" class="step hidden">
+        <p>On the Dropdown choose <b>Kids and Teens Medical Group</b> and <br> <b>MOLINA HEALTHCARE CALIFORNIA</b></p>
+        <br>
+        <div class="container">
+            <div class="EBG-top">
+                <img src="EGB-Molina.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Scroll down to <b>Provider Information</b> and select <br><b>De Silva, Janesri (NPI: 1568502953 - Tax ID: 208778520)</b></p>
+        <br>
+        <div class="container">
+            <div class="provider-info-com">
+                <img src="provider-info-com.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Scroll down to <b>Patient Information</b> and add the <b>Member ID</b>,<br> <b>Member Date of Birth</b>, and set the <b>State</b> to <b>California</b></p>
+        <br>
+        <div class="container">
+            <div class="provider-info-com">
+                <img src="pt-info-Molina.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Scroll down and press <b>Submit</b></p>
+        <br>
+        <div class="container">
+            <div class="availity-submit">
+                <img src="availity_submit.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <button class="btn" onclick="selectOption('availity-c-next-next', 'availity-cmnn', 'availity-cmn')">Next</button>
+    </div>
+
+    <div id="availity-cbc" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://apps.availity.com/web/onboarding/availity-fr-ui/#/login">availity.com</a></p>
+        <br>
+        <p>Go to the <b>Eligibility and Benefits Inquiry</b> page:</p>
+        <br>
+        <div class="container">
+            <div class="EBG-menu">
+                <img src="EBG-menu.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <button class="btn" onclick="selectOption('availity-cbc-next', 'availity-cbcn', 'availity-cbc')">Next</button>
+    </div>
+
+    <div id="availity-cbcn" class="step hidden">
+        <p>On the Dropdown choose <b>Kids and Teens Medical Group</b> and <br> <b>ANTHEM - CA</b></p>
+        <br>
+        <div class="container">
+            <div class="EBG-top">
+                <img src="EGB-AnthemBC.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Scroll down to <b>Provider Information</b> and select <br><b>De Silva, Janesri (NPI: 1568502953 - Tax ID: 208778520)</b></p>
+        <br>
+        <div class="container">
+            <div class="provider-info-com">
+                <img src="provider-info-com.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Scroll down to <b>Patient Information</b> and add the <b>Member ID</b>,<br> <b>Member Date of Birth</b></p>
+        <br>
+        <div class="container">
+            <div class="provider-info-com">
+                <img src="pt-info-AnthemBC.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Scroll down and press <b>Submit</b></p>
+        <br>
+        <div class="container">
+            <div class="availity-submit">
+                <img src="availity_submit.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <button class="btn" onclick="selectOption('availity-cbc-next-next', 'availity-cbcnn', 'availity-cbcn')">Next</button>
+    </div>
+
+    <div id="availity-ca" class="step hidden">
+        <p>Go to: <br><br> <a target="_blank" href="https://apps.availity.com/web/onboarding/availity-fr-ui/#/login">availity.com</a></p>
+        <br>
+        <p>Go to the <b>Eligibility and Benefits Inquiry</b> page:</p>
+        <br>
+        <div class="container">
+            <div class="EBG-menu">
+                <img src="EBG-menu.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <button class="btn" onclick="selectOption('availity-ca-next', 'availity-can', 'availity-ca')">Next</button>
+    </div>
+
+    <div id="availity-can" class="step hidden">
+        <p>On the Dropdown choose <b>Kids and Teens Medical Group</b> and <br> <b>AETNA (COMMERCIAL & MEDICARE)</b></p>
+        <br>
+        <div class="container">
+            <div class="EBG-top">
+                <img src="EGB-Aetna.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Scroll down to <b>Provider Information</b> and select <br><b>De Silva, Janesri (NPI: 1568502953 - Tax ID: 208778520)</b></p>
+        <br>
+        <div class="container">
+            <div class="provider-info-com">
+                <img src="provider-info-com.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Scroll down to <b>Patient Information</b> and add the <b>Member ID</b>,<br> <b>Member Date of Birth</b></p>
+        <br>
+        <div class="container">
+            <div class="provider-info-com">
+                <img src="pt-info-Aetna.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>Scroll down and press <b>Submit</b></p>
+        <br>
+        <div class="container">
+            <div class="availity-submit">
+                <img src="availity_submit.png" alt="Error">
+            </div>
+        </div>
+        <br>
+        <button class="btn" onclick="selectOption('availity-ca-next-next', 'availity-cann', 'availity-can')">Next</button>
     </div>
 
     <div id="step3-a1-a" class="step hidden">
-        <p>Do Not Transfer - High Risk Aid Code</p>
+        <p>REGAL PATHWAY</p>
     </div>
 
     <div id="step3-a1-b" class="step hidden">
