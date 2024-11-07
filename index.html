@@ -383,16 +383,20 @@
         <div id="disabled" class="step hidden">
             <p>What <b>HCP</b> does the patient have?</p>
             <button class="btn" onclick="selectOption('d-hnet', 'hnet-dis', 'disabled')">HealthNet</button>
-            <button class="btn" onclick="selectOption('d-la-care', 'mol-dis', 'disabled')">La Care</button>
-            <button class="btn" onclick="selectOption('d-bluecross', 'mol-dis', 'disabled')">Blue Cross</button>
-            <button class="btn" onclick="selectOption('d-blueshield', 'mol-dis', 'disabled')">Blue Shield</button>
-            <button class="btn" onclick="selectOption('d-carefirst', 'mol-dis', 'disabled')">Care First</button>
+            <button class="btn" onclick="selectOption('d-la-care', 'mol-hnet-dis', 'disabled')">La Care</button>
+            <button class="btn" onclick="selectOption('d-bluecross', 'mol-hnet-dis', 'disabled')">Blue Cross</button>
+            <button class="btn" onclick="selectOption('d-blueshield', 'mol-hnet-dis', 'disabled')">Blue Shield</button>
+            <button class="btn" onclick="selectOption('d-carefirst', 'mol-hnet-dis', 'disabled')">Care First</button>
             <button class="btn" onclick="selectOption('d-molina', 'mol-dis', 'disabled')">Molina</button>
             <button class="btn" onclick="selectOption('d-medi-cal-only', 'medi-dis', 'disabled')">None (Medi-Cal Only)</button>
         </div>
 
         <div id="hnet-dis" class="step hidden">
             <p>hnet</p>
+        </div>
+
+        <div id="mol-hnet-dis" class="step hidden">
+            <p>molina / healthnet</p>
         </div>
 
         <div id="mol-dis" class="step hidden">
