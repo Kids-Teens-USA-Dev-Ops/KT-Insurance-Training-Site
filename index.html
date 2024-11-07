@@ -130,7 +130,6 @@
             <button class="btn" onclick="selectOption('b3', 'availity-ca', 'step2-b')">Aetna</button>
             <button class="btn" onclick="selectOption('b4', 'availity-cbc', 'step2-b')">Blue Cross</button>
             <button class="btn" onclick="selectOption('b5', 'availity-cbc', 'step2-b')">Blue Shield</button>
-            <button class="btn" onclick="selectOption('b6', 'step3-b6', 'step2-b')">Cigna</button>
             <button class="btn" onclick="selectOption('b7', 'united', 'step2-b')">United Healthcare</button>
             <button class="btn" onclick="selectOption('b8', 'availity-cm', 'step2-b')">Molina Commercial</button>
         </div>
@@ -372,7 +371,36 @@
         </div>
     
         <div id="step3-a1-a" class="step hidden">
-            <p>REGAL PATHWAY</p>
+            <p>What type of Aid-Code does the patient have?</p>
+            <button class="btn" onclick="selectOption('step3-a1-a-fstr', 'foster', 'step3-a1-a')">Foster</button>
+            <button class="btn" onclick="selectOption('step3-a1-a-disbl', 'disabled', 'step3-a1-a')">Disabled (SPD)</button>
+        </div>
+
+        <div id="foster" class="step hidden">
+            <p>Do Not Tranfer - Leave as Straight Medi-Cal</p>
+        </div>
+
+        <div id="disabled" class="step hidden">
+            <p>What <b>HCP</b> does the patient have?</p>
+            <button class="btn" onclick="selectOption('d-hnet', 'hnet-dis', 'disabled')">HealthNet</button>
+            <button class="btn" onclick="selectOption('d-la-care', 'mol-dis', 'disabled')">La Care</button>
+            <button class="btn" onclick="selectOption('d-bluecross', 'mol-dis', 'disabled')">Blue Cross</button>
+            <button class="btn" onclick="selectOption('d-blueshield', 'mol-dis', 'disabled')">Blue Shield</button>
+            <button class="btn" onclick="selectOption('d-carefirst', 'mol-dis', 'disabled')">Care First</button>
+            <button class="btn" onclick="selectOption('d-molina', 'mol-dis', 'disabled')">Molina</button>
+            <button class="btn" onclick="selectOption('d-medi-cal-only', 'medi-dis', 'disabled')">None (Medi-Cal Only)</button>
+        </div>
+
+        <div id="hnet-dis" class="step hidden">
+            <p>hnet</p>
+        </div>
+
+        <div id="mol-dis" class="step hidden">
+            <p>molina</p>
+        </div>
+
+        <div id="medi-dis" class="step hidden">
+            <p>Do Not Tranfer - Leave as Straight Medi-Cal</p>
         </div>
     
         <div id="step3-a1-b" class="step hidden">
