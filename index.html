@@ -392,15 +392,288 @@
         </div>
 
         <div id="hnet-dis" class="step hidden">
-            <p>hnet</p>
+            <p>Go to: <br><br> <a target="_blank" href="https://www.healthcareoptions.dhcs.ca.gov/en/online">dhcs.ca.gov</a></p>
+            <br>
+            <p>Enter the Patient's <b>Last Name</b>, <b>Date of Birth</b>, and <b>Member ID</b> and press <b>Submit</b></p>
+            <br>
+            <div class="container">
+                <div class="EBG-top">
+                    <img src="hco-first.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <button class="btn" onclick="selectOption('NEXThnet-dis', 'hnet-dis-next', 'hnet-dis')">Next</button>
+        </div>
+
+        <div id="hnet-dis-next" class="step hidden">
+            <p>If successfult you will be taken to a page with the Member's Name, check to make sure that the Name and Birth Year match what you have on file.</p>
+            <br>
+            <br>
+            <p>At this point you will need to <b>Call the Patient</b> and ensure that you have the <b>Patient's Permission</b> to continue</p>
+            <br>
+            <p>Sample Script: </p>
+            <br>
+            <p>Patient Response: </p>
+            <button class="btn" onclick="selectOption('NEXThnet-dis-yes', 'hnet-dis-next-yes', 'hnet-dis-next')">Yes - Continue</button>
+            <button class="btn" onclick="selectOption('NEXThnet-dis-no', 'refused', 'hnet-dis-next')">No - Do Not Make Any Changes</button>
+        </div>
+
+        <div id="hnet-dis-next-yes" class="step hidden">
+            <p><b>Only if the Patient said Yes</b> look for the button next to <b>Medical Plan - May Make Changes</b> and click where it says <b>Make Changes</b></p>
+            <br>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-make-changes.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen choose <b>Health Net Comm Solutions - 352</b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-hnet-select.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen in the dropdown <b>Choose a partner plan (optional)</b> Select <b>Health Net Comm Solutions</b> and <b>Save & Continue</b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-hnet-dropdown.jfif" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen enter NPI <b>1568502953</b> <br>Select the option that says <b>Janesri W De Silva</b> and with the address of the patient's closest location</p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-hnet-provider.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>You will reach a screen that asks you to confirm your enrollment choices and give a reason for choosing a new plan</p>
+            <p>Confirm that everything is correct and on the dropdown select <b></b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-reason.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen you will have to click the box that says <b>I accept these terms</b> and enter <b>the Patient's First and Last Name</b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-terms.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <button class="btn" onclick="selectOption('NEXThnet-dis-yes-next', 'hnet-dis-next-yes-next', 'hnet-dis-next-yes')">Next</button>
+        </div>
+
+        <div id="hnet-dis-next-yes-next" class="step hidden">
+            <p>You should recieve a confirmation that looks like this</p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-confirm.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>You may notify the patient that the transfer is complete and will be effective next month</p>
+            <br>
+            <p>Thank the patient and <b>Hang Up</b></p>
+            <br>
+            <button class="btn" onclick="selectOption('NEXThnet-dis-yes-next-complete', 'transfer-complete', 'hnet-dis-next-yes-next')">Next</button>
         </div>
 
         <div id="mol-hnet-dis" class="step hidden">
-            <p>molina / healthnet</p>
+            <p>Go to: <br><br> <a target="_blank" href="https://www.healthcareoptions.dhcs.ca.gov/en/online">dhcs.ca.gov</a></p>
+            <br>
+            <p>Enter the Patient's <b>Last Name</b>, <b>Date of Birth</b>, and <b>Member ID</b> and press <b>Submit</b></p>
+            <br>
+            <div class="container">
+                <div class="EBG-top">
+                    <img src="hco-first.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <button class="btn" onclick="selectOption('mol-NEXThnet-dis', 'mol-hnet-dis-next', 'mol-hnet-dis')">Next</button>
+        </div>
+
+        <div id="mol-hnet-dis-next" class="step hidden">
+            <p>If successfult you will be taken to a page with the Member's Name, check to make sure that the Name and Birth Year match what you have on file.</p>
+            <br>
+            <br>
+            <p>At this point you will need to <b>Call the Patient</b> and ensure that you have the <b>Patient's Permission</b> to continue</p>
+            <br>
+            <p>Sample Script: </p>
+            <br>
+            <p>Patient Response: </p>
+            <button class="btn" onclick="selectOption('mol-NEXThnet-dis-yes', 'mol-hnet-dis-next-yes', 'mol-hnet-dis-next')">Yes - Continue</button>
+            <button class="btn" onclick="selectOption('mol-NEXThnet-dis-no', 'refused', 'mol-hnet-dis-next')">No - Do Not Make Any Changes</button>
+        </div>
+
+        <div id="mol-hnet-dis-next-yes" class="step hidden">
+            <p><b>Only if the Patient said Yes</b> look for the button next to <b>Medical Plan - May Make Changes</b> and click where it says <b>Make Changes</b></p>
+            <br>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-make-changes.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen choose <b>Health Net Comm Solutions - 352</b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-hnet-select.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen in the dropdown <b>Choose a partner plan (optional)</b> Select <b>Molina Healthcare Partner</b> and <b>Save & Continue</b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-hnet-dropdown.jfif" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen enter NPI <b>1568502953</b> <br>Select the option that says <b>Janesri W De Silva</b> and with the address of the patient's closest location</p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-hnet-provider.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>You will reach a screen that asks you to confirm your enrollment choices and give a reason for choosing a new plan</p>
+            <p>Confirm that everything is correct and on the dropdown select <b></b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-reason.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen you will have to click the box that says <b>I accept these terms</b> and enter <b>the Patient's First and Last Name</b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-terms.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <button class="btn" onclick="selectOption('mol-NEXThnet-dis-yes-next', 'mol-hnet-dis-next-yes-next', 'mol-hnet-dis-next-yes')">Next</button>
+        </div>
+
+        <div id="mol-hnet-dis-next-yes-next" class="step hidden">
+            <p>You should recieve a confirmation that looks like this</p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-confirm.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>You may notify the patient that the transfer is complete and will be effective next month</p>
+            <br>
+            <p>Thank the patient and <b>Hang Up</b></p>
+            <br>
+            <button class="btn" onclick="selectOption('mol-NEXThnet-dis-yes-next-complete', 'transfer-complete', 'mol-hnet-dis-next-yes-next')">Next</button>
         </div>
 
         <div id="mol-dis" class="step hidden">
-            <p>molina</p>
+            <p>Go to: <br><br> <a target="_blank" href="https://www.healthcareoptions.dhcs.ca.gov/en/online">dhcs.ca.gov</a></p>
+            <br>
+            <p>Enter the Patient's <b>Last Name</b>, <b>Date of Birth</b>, and <b>Member ID</b> and press <b>Submit</b></p>
+            <br>
+            <div class="container">
+                <div class="EBG-top">
+                    <img src="hco-first.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <button class="btn" onclick="selectOption('mol-NEXTmol-dis', 'mol-dis-next', 'mol-dis')">Next</button>
+        </div>
+
+        <div id="mol-dis-next" class="step hidden">
+            <p>If successfult you will be taken to a page with the Member's Name, check to make sure that the Name and Birth Year match what you have on file.</p>
+            <br>
+            <br>
+            <p>At this point you will need to <b>Call the Patient</b> and ensure that you have the <b>Patient's Permission</b> to continue</p>
+            <br>
+            <p>Sample Script: </p>
+            <br>
+            <p>Patient Response: </p>
+            <button class="btn" onclick="selectOption('mol-NEXTmol-dis-yes', 'mol-dis-next-yes', 'mol-dis-next')">Yes - Continue</button>
+            <button class="btn" onclick="selectOption('mol-NEXTmol-dis-no', 'refused', 'mol-dis-next')">No - Do Not Make Any Changes</button>
+        </div>
+
+        <div id="mol-dis-next-yes" class="step hidden">
+            <p><b>Only if the Patient said Yes</b> look for the button next to <b>Medical Plan - May Make Changes</b> and click where it says <b>Make Changes</b></p>
+            <br>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-make-changes.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen choose <b>Health Net Comm Solutions - 352</b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-hnet-select.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen in the dropdown <b>Choose a partner plan (optional)</b> Select <b>Molina Healthcare Partner</b> and <b>Save & Continue</b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-hnet-dropdown.jfif" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen enter NPI <b>1568502953</b> <br>Select the option that says <b>Janesri W De Silva</b> and with the address of the patient's closest location</p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-hnet-provider.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>You will reach a screen that asks you to confirm your enrollment choices and give a reason for choosing a new plan</p>
+            <p>Confirm that everything is correct and on the dropdown select <b></b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-reason.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>On the next screen you will have to click the box that says <b>I accept these terms</b> and enter <b>the Patient's First and Last Name</b></p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-terms.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <button class="btn" onclick="selectOption('mol-NEXTmol-dis-yes-next', 'mol-dis-next-yes-next', 'mol-dis-next-yes')">Next</button>
+        </div>
+
+        <div id="mol-dis-next-yes-next" class="step hidden">
+            <p>You should recieve a confirmation that looks like this</p>
+            <div class="container">
+                <div class="EBG-menu">
+                    <img src="hco-confirm.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>You may notify the patient that the transfer is complete and will be effective next month</p>
+            <br>
+            <p>Thank the patient and <b>Hang Up</b></p>
+            <br>
+            <button class="btn" onclick="selectOption('mol-NEXTmol-dis-yes-next-complete', 'transfer-complete', 'mol-dis-next-yes-next')">Next</button>
         </div>
 
         <div id="medi-dis" class="step hidden">
@@ -530,6 +803,14 @@
     
         <div id="medi-only" class="step hidden">
             <p>Transfer to Serendib Molina: Call (800) 526-8196</p>
+        </div>
+
+        <div id="refused" class="step hidden">
+            <p>Do Not Transfer - Patient <b>REFUSED</b></p>
+        </div>
+
+        <div id="transfer-complete" class="step hidden">
+            <p>Transfer Complte Procedure : Excel Sheet > ECW > Excel Sheet</p>
         </div>
     </div>
     <button class="btn2" onclick="restart()">Restart</button>
