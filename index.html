@@ -109,8 +109,38 @@
     
         <div id="step1" class="step">
             <p>What Type of Insurance Does the Patient Have:</p>
-            <button class="btn" onclick="selectOption('step1a', 'step2-a', 'step1')">Medi-Cal</button>
+            <button class="btn" onclick="selectOption('step1a', 'step2-a', 'step1')">Medi-Cal <br> (ID starts with 9)</button>
             <button class="btn" onclick="selectOption('step1b', 'step2-b', 'step1')">Commercial</button>
+            <br>
+            <button class="btn" onclick="selectOption('step1AJC', 'other-id', 'step1')">ID starts with AJC or JQC</button>
+        </div>
+
+        <div id="other-id" class="step hidden">
+            <p>What ID Prefix does the Patient Have:</p>
+            <br>
+            <button class="btn" onclick="selectOption('other-idAJC', 'AJC', 'other-id')">AJC</button>
+            <button class="btn" onclick="selectOption('other-idJQC', 'JQC', 'other-id')">JQC</button>
+        </div>
+
+        <div id="AJC" class="step hidden">
+            <p>Go to: <br><br> <a target="_blank" href="https://www.lacare.org/providers">lacare.org</a></p>
+            <br>
+            <p>Search the Patient by <b>First Name</b>, <b>Last Name</b>, and <b>Date of Birth</b></p>
+            <br>
+            <div class="container">
+                <div class=provider-info-com>
+                    <img src="lacare-search.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>Copy the digits starting with '9' and ending with the first letter from <b>Subsciber ID:</b> that is the Medi-Cal ID</p>
+            <button class="btn" onclick="selectOption('other-idAJCnext', 'step2-a', 'AJC')">Next</button>
+        </div>
+
+        <div id="JQC" class="step hidden">
+            <p>The Medi-Cal ID starts with the '9' after 'JQC', copy this into the medical portal on the next step</p>
+            <br>
+            <button class="btn" onclick="selectOption('other-idJQCnext', 'step2-a', 'JQC')">Next</button>
         </div>
     
         <div id="step2-a" class="step hidden">
@@ -174,7 +204,7 @@
         </div>
     
         <div id="next-united" class="step hidden">
-            <p></p>
+            <p>UHC Pathway cont.</p>
         </div>
     
         <div id="lacare-cm" class="step hidden">
@@ -184,7 +214,6 @@
             <br>
             <button class="btn" onclick="selectOption('lacarecm-1-a', 'yes-lacm', 'lacare-cm')">Yes</button>
             <button class="btn" onclick="selectOption('lacarecm-1-b', 'no-lacm', 'lacare-cm')">No</button>
-    
         </div>
     
         <div id="yes-lacm" class="step hidden">
@@ -263,6 +292,71 @@
             <br>
             <button class="btn" onclick="selectOption('availity-c-next-next', 'availity-cmnn', 'availity-cmn')">Next</button>
         </div>
+
+        <div id="availity-cmnn" class="step hidden">
+            <p>*Make sure that the Member's Name and <br> Date of Birth match what you have*</b></p>
+            <br>
+            <div class="container">
+                <div class="provider-info-com">
+                    <img src="molina-cm-pt.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>What is the <b>Member Status</b>?</p>
+            <br>
+            <button class="btn" onclick="selectOption('availity-cmnn-1', 'availity-cmnn-active', 'availity-cmnn')">Active Coverage</button>
+            <button class="btn" onclick="selectOption('availity-cmnn-2', 'availity-cmnn-inactive', 'availity-cmnn')">Inactive</button>
+        </div>
+    
+        <div id="availity-cmnn-active" class="step hidden">
+            <p>Go to the section titled <b>Provider Information</b>:</p>
+            <br>
+            <div class="container">
+                <div class="providerInfo">
+                    <img src="provider-info.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>Is the <b>"Pay to Affiliate"</b> listed as <b>SERENDIB HEALTHYWAYS</b>:</p>
+            <br>
+            <button class="btn" onclick="selectOption('availity-cmnn-active-1', 'availity-cmnn-active-yes', 'availity-cmnn-active')">Yes</button>
+            <button class="btn" onclick="selectOption('availity-cmnn-active-2', 'availity-cmnn-active-no', 'availity-cmnn-active')">No</button>
+        </div>
+    
+        <div id="availity-cmnn-active-yes" class="step hidden">
+            <p>Under <b>Plan Maximums and Deductables</b> > <b>Service Level Contact Information</b>:</p>
+            <br>
+            <div class="container">
+                <div class="slci">
+                    <img src="slci.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>Is the <b>Name</b> in this section that of one of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a> </p>
+            <button class="btn" onclick="selectOption('availity-cmnn-active-yes-1', 'availity-cmnn-active-yes-yes', 'availity-cmnn-active-yes')">Yes</button>
+            <button class="btn" onclick="selectOption('availity-cmnn-active-yes-2', 'availity-cmnn-active-yes-no', 'availity-cmnn-active-yes')">No</button>
+        </div>
+    
+        <div id="availity-cmnn-active-yes-yes" class="step hidden">
+            <p>Already Transfered</p>
+        </div>
+    
+        <div id="availity-cmnn-active-yes-no" class="step hidden">
+            <p>Click on <b>Member ID Card</b> near the top of the page</p>
+            <br>
+            <p>Find and Call the <b>Member Services</b> number on the ID card</p>
+        </div>
+    
+        <div id="availity-cmnn-active-no" class="step hidden">
+            <p>Click on <b>Member ID Card</b> near the top of the page</p>
+            <br>
+            <p>Find and Call the <b>Member Services</b> number on the ID card</p>
+        </div>
+    
+        <div id="availity-cmnn-inactive" class="step hidden">
+            <p>Inactive <br> (Peds offer CHDP for Physicals and Vaccines Only)</p>
+        </div>
+
     
         <div id="availity-cbc" class="step hidden">
             <p>Go to: <br><br> <a target="_blank" href="https://apps.availity.com/web/onboarding/availity-fr-ui/#/login">availity.com</a></p>
@@ -315,6 +409,66 @@
             </div>
             <br>
             <button class="btn" onclick="selectOption('availity-cbc-next-next', 'availity-cbcnn', 'availity-cbcn')">Next</button>
+        </div>
+
+        <div id="availity-cbcnn" class="step hidden">
+            <p>*Make sure that the Member's Name and <br> Date of Birth match what you have*</b></p>
+            <br>
+            <div class="container">
+                <div class="provider-info-com">
+                    <img src="blue-cm-pt.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>What is the <b>Member Status</b>?</p>
+            <br>
+            <button class="btn" onclick="selectOption('availity-cbcn-1', 'availity-cbcn-active', 'availity-cbcnn')">Active Coverage</button>
+            <button class="btn" onclick="selectOption('availity-cbcn-2', 'availity-cbcn-inactive', 'availity-cbcnn')">Inactive</button>
+        </div>
+    
+        <div id="availity-cbcn-active" class="step hidden">
+            <p>Go to the section titled <b>Provider Information</b>:</p>
+            <br>
+            <div class="container">
+                <div class="providerInfo">
+                    <img src="provider-info.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>Is the <b>"Pay to Affiliate"</b> listed as <b>SERENDIB HEALTHYWAYS</b>:</p>
+            <br>
+            <button class="btn" onclick="selectOption('availity-cbcn-active-1', 'availity-cbcn-active-yes', 'availity-cbcn-active')">Yes</button>
+            <button class="btn" onclick="selectOption('availity-cbcn-active-2', 'availity-cbcn-active-no', 'availity-cbcn-active')">No</button>
+        </div>
+    
+        <div id="availity-cbcn-active-yes" class="step hidden">
+            <p>Under <b>Plan Maximums and Deductables</b> > <b>Service Level Contact Information</b>:</p>
+            <br>
+            <div class="container">
+                <div class="slci">
+                    <img src="slci.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>Is the <b>Name</b> in this section that of one of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a> </p>
+            <button class="btn" onclick="selectOption('availity-cbcn-active-yes-1', 'availity-cbcn-active-yes-yes', 'availity-cbcn-active-yes')">Yes</button>
+            <button class="btn" onclick="selectOption('availity-cbcn-active-yes-2', 'availity-cbcn-active-yes-no', 'availity-cbcn-active-yes')">No</button>
+        </div>
+    
+        <div id="availity-cbcn-active-yes-yes" class="step hidden">
+            <p>Already Transfered</p>
+        </div>
+    
+        <div id="availity-cbcn-active-yes-no" class="step hidden">
+            <p>Transfer to </p>
+        </div>
+    
+        <div id="availity-cbcn-active-no" class="step hidden">
+            <p>Transfer to </p>
+        </div>
+    
+        <div id="availity-cbcn-inactive" class="step hidden">
+            <p>Inactive <br> (Peds offer CHDP for Physicals and Vaccines Only)</p>
         </div>
     
         <div id="availity-ca" class="step hidden">
@@ -369,6 +523,70 @@
             <br>
             <button class="btn" onclick="selectOption('availity-ca-next-next', 'availity-cann', 'availity-can')">Next</button>
         </div>
+
+        <div id="availity-cann" class="step hidden">
+            <p>*Make sure that the Member's Name and <br> Date of Birth match what you have*</b></p>
+            <br>
+            <div class="container">
+                <div class="provider-info-com">
+                    <img src="aetna-cm-pt.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>What is the <b>Member Status</b>?</p>
+            <br>
+            <button class="btn" onclick="selectOption('availity-can-1', 'availity-can-active', 'availity-cann')">Active Coverage</button>
+            <button class="btn" onclick="selectOption('availity-can-2', 'availity-can-inactive', 'availity-cann')">Inactive</button>
+        </div>
+    
+        <div id="availity-can-active" class="step hidden">
+            <p>Go to the section titled <b>Provider Information</b>:</p>
+            <br>
+            <div class="container">
+                <div class="providerInfo">
+                    <img src="provider-info.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>Is the <b>"Pay to Affiliate"</b> listed as <b>SERENDIB HEALTHYWAYS</b>:</p>
+            <br>
+            <button class="btn" onclick="selectOption('availity-can-active-1', 'availity-can-active-yes', 'availity-can-active')">Yes</button>
+            <button class="btn" onclick="selectOption('availity-can-active-2', 'availity-can-active-no', 'availity-can-active')">No</button>
+        </div>
+    
+        <div id="availity-can-active-yes" class="step hidden">
+            <p>Under <b>Plan Maximums and Deductables</b> > <b>Service Level Contact Information</b>:</p>
+            <br>
+            <div class="container">
+                <div class="slci">
+                    <img src="slci.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>Is the <b>Name</b> in this section that of one of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a> </p>
+            <button class="btn" onclick="selectOption('availity-can-active-yes-1', 'availity-can-active-yes-yes', 'availity-can-active-yes')">Yes</button>
+            <button class="btn" onclick="selectOption('availity-can-active-yes-2', 'availity-can-active-yes-no', 'availity-can-active-yes')">No</button>
+        </div>
+    
+        <div id="availity-can-active-yes-yes" class="step hidden">
+            <p>Already Transfered</p>
+        </div>
+    
+        <div id="availity-can-active-yes-no" class="step hidden">
+            <p>Click on <b>Member ID Card</b> near the top of the page</p>
+            <br>
+            <p>Find and Call the <b>Member Services</b> number on the ID card</p>
+        </div>
+    
+        <div id="availity-can-active-no" class="step hidden">
+            <p>Click on <b>Member ID Card</b> near the top of the page</p>
+            <br>
+            <p>Find and Call the <b>Member Services</b> number on the ID card</p>
+        </div>
+    
+        <div id="availity-can-inactive" class="step hidden">
+            <p>Inactive <br> (Peds offer CHDP for Physicals and Vaccines Only)</p>
+        </div>
     
         <div id="step3-a1-a" class="step hidden">
             <p>What type of Aid-Code does the patient have?</p>
@@ -392,98 +610,7 @@
         </div>
 
         <div id="hnet-dis" class="step hidden">
-            <p>Go to: <br><br> <a target="_blank" href="https://www.healthcareoptions.dhcs.ca.gov/en/online">dhcs.ca.gov</a></p>
-            <br>
-            <p>Enter the Patient's <b>Last Name</b>, <b>Date of Birth</b>, and <b>Member ID</b> and press <b>Submit</b></p>
-            <br>
-            <div class="container">
-                <div class="EBG-top">
-                    <img src="hco-first.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <button class="btn" onclick="selectOption('NEXThnet-dis', 'hnet-dis-next', 'hnet-dis')">Next</button>
-        </div>
-
-        <div id="hnet-dis-next" class="step hidden">
-            <p>If successfult you will be taken to a page with the Member's Name, check to make sure that the Name and Birth Year match what you have on file.</p>
-            <br>
-            <br>
-            <p>At this point you will need to <b>Call the Patient</b> and ensure that you have the <b>Patient's Permission</b> to continue</p>
-            <br>
-            <p>Sample Script: </p>
-            <br>
-            <p>Patient Response: </p>
-            <button class="btn" onclick="selectOption('NEXThnet-dis-yes', 'hnet-dis-next-yes', 'hnet-dis-next')">Yes - Continue</button>
-            <button class="btn" onclick="selectOption('NEXThnet-dis-no', 'refused', 'hnet-dis-next')">No - Do Not Make Any Changes</button>
-        </div>
-
-        <div id="hnet-dis-next-yes" class="step hidden">
-            <p><b>Only if the Patient said Yes</b> look for the button next to <b>Medical Plan - May Make Changes</b> and click where it says <b>Make Changes</b></p>
-            <br>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-make-changes.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>On the next screen choose <b>Health Net Comm Solutions - 352</b></p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-hnet-select.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>On the next screen in the dropdown <b>Choose a partner plan (optional)</b> Select <b>Health Net Comm Solutions</b> and <b>Save & Continue</b></p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-hnet-dropdown.jfif" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>On the next screen enter NPI <b>1568502953</b> <br>Select the option that says <b>Janesri W De Silva</b> and with the address of the patient's closest location</p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-hnet-provider.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>You will reach a screen that asks you to confirm your enrollment choices and give a reason for choosing a new plan</p>
-            <p>Confirm that everything is correct and on the dropdown select <b></b></p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-reason.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>On the next screen you will have to click the box that says <b>I accept these terms</b> and enter <b>the Patient's First and Last Name</b></p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-terms.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <button class="btn" onclick="selectOption('NEXThnet-dis-yes-next', 'hnet-dis-next-yes-next', 'hnet-dis-next-yes')">Next</button>
-        </div>
-
-        <div id="hnet-dis-next-yes-next" class="step hidden">
-            <p>You should recieve a confirmation that looks like this</p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-confirm.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <p>You may notify the patient that the transfer is complete and will be effective next month</p>
-            <br>
-            <p>Thank the patient and <b>Hang Up</b></p>
-            <br>
-            <button class="btn" onclick="selectOption('NEXThnet-dis-yes-next-complete', 'transfer-complete', 'hnet-dis-next-yes-next')">Next</button>
+            <p>Transfer to Regal: Call (800) 675-6110</p>
         </div>
 
         <div id="mol-hnet-dis" class="step hidden">
@@ -531,7 +658,7 @@
             </div>
             <br>
             <br>
-            <p>On the next screen in the dropdown <b>Choose a partner plan (optional)</b> Select <b>Molina Healthcare Partner</b> and <b>Save & Continue</b></p>
+            <p>On the next screen in the dropdown <b>Choose a partner plan (optional)</b> Select <b>Molina Healthcare Partner</b> unless the Patient wants otherwise and <b>Save & Continue</b></p>
             <div class="container">
                 <div class="EBG-menu">
                     <img src="hco-hnet-dropdown.jfif" alt="Error">
@@ -539,7 +666,7 @@
             </div>
             <br>
             <br>
-            <p>On the next screen enter NPI <b>1568502953</b> <br>Select the option that says <b>Janesri W De Silva</b> and with the address of the patient's closest location</p>
+            <p>On the next screen enter NPI of the contracted Provider <br><br> Select the option that matches the Provider's Name and with the address of the patient's closest location</p>
             <div class="container">
                 <div class="EBG-menu">
                     <img src="hco-hnet-provider.png" alt="Error">
@@ -548,7 +675,7 @@
             <br>
             <br>
             <p>You will reach a screen that asks you to confirm your enrollment choices and give a reason for choosing a new plan</p>
-            <p>Confirm that everything is correct and on the dropdown select <b></b></p>
+            <p>Confirm that everything is correct and on the dropdown select <b>Other</b></p>
             <div class="container">
                 <div class="EBG-menu">
                     <img src="hco-reason.png" alt="Error">
@@ -574,106 +701,15 @@
                 </div>
             </div>
             <br>
-            <p>You may notify the patient that the transfer is complete and will be effective next month</p>
+            <p>You may notify the patient that the transfer is complete and will be effective in a month or two</p>
             <br>
             <p>Thank the patient and <b>Hang Up</b></p>
             <br>
-            <button class="btn" onclick="selectOption('mol-NEXThnet-dis-yes-next-complete', 'transfer-complete', 'mol-hnet-dis-next-yes-next')">Next</button>
+            <button class="btn" onclick="selectOption('mol-NEXThnet-dis-yes-next-complete', 'transfer-complete-referrals', 'mol-hnet-dis-next-yes-next')">Next</button>
         </div>
 
         <div id="mol-dis" class="step hidden">
-            <p>Go to: <br><br> <a target="_blank" href="https://www.healthcareoptions.dhcs.ca.gov/en/online">dhcs.ca.gov</a></p>
-            <br>
-            <p>Enter the Patient's <b>Last Name</b>, <b>Date of Birth</b>, and <b>Member ID</b> and press <b>Submit</b></p>
-            <br>
-            <div class="container">
-                <div class="EBG-top">
-                    <img src="hco-first.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <button class="btn" onclick="selectOption('mol-NEXTmol-dis', 'mol-dis-next', 'mol-dis')">Next</button>
-        </div>
-
-        <div id="mol-dis-next" class="step hidden">
-            <p>If successfult you will be taken to a page with the Member's Name, check to make sure that the Name and Birth Year match what you have on file.</p>
-            <br>
-            <br>
-            <p>At this point you will need to <b>Call the Patient</b> and ensure that you have the <b>Patient's Permission</b> to continue</p>
-            <br>
-            <p>Sample Script: </p>
-            <br>
-            <p>Patient Response: </p>
-            <button class="btn" onclick="selectOption('mol-NEXTmol-dis-yes', 'mol-dis-next-yes', 'mol-dis-next')">Yes - Continue</button>
-            <button class="btn" onclick="selectOption('mol-NEXTmol-dis-no', 'refused', 'mol-dis-next')">No - Do Not Make Any Changes</button>
-        </div>
-
-        <div id="mol-dis-next-yes" class="step hidden">
-            <p><b>Only if the Patient said Yes</b> look for the button next to <b>Medical Plan - May Make Changes</b> and click where it says <b>Make Changes</b></p>
-            <br>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-make-changes.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>On the next screen choose <b>Health Net Comm Solutions - 352</b></p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-hnet-select.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>On the next screen in the dropdown <b>Choose a partner plan (optional)</b> Select <b>Molina Healthcare Partner</b> and <b>Save & Continue</b></p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-hnet-dropdown.jfif" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>On the next screen enter NPI <b>1568502953</b> <br>Select the option that says <b>Janesri W De Silva</b> and with the address of the patient's closest location</p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-hnet-provider.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>You will reach a screen that asks you to confirm your enrollment choices and give a reason for choosing a new plan</p>
-            <p>Confirm that everything is correct and on the dropdown select <b></b></p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-reason.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <br>
-            <p>On the next screen you will have to click the box that says <b>I accept these terms</b> and enter <b>the Patient's First and Last Name</b></p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-terms.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <button class="btn" onclick="selectOption('mol-NEXTmol-dis-yes-next', 'mol-dis-next-yes-next', 'mol-dis-next-yes')">Next</button>
-        </div>
-
-        <div id="mol-dis-next-yes-next" class="step hidden">
-            <p>You should recieve a confirmation that looks like this</p>
-            <div class="container">
-                <div class="EBG-menu">
-                    <img src="hco-confirm.png" alt="Error">
-                </div>
-            </div>
-            <br>
-            <p>You may notify the patient that the transfer is complete and will be effective next month</p>
-            <br>
-            <p>Thank the patient and <b>Hang Up</b></p>
-            <br>
-            <button class="btn" onclick="selectOption('mol-NEXTmol-dis-yes-next-complete', 'transfer-complete', 'mol-dis-next-yes-next')">Next</button>
+            <p>Transfer to Regal: Call (800) 526-8196</p>
         </div>
 
         <div id="medi-dis" class="step hidden">
@@ -806,7 +842,11 @@
         </div>
 
         <div id="refused" class="step hidden">
-            <p>Do Not Transfer - Patient <b>REFUSED</b></p>
+            <p>Do Not Transfer - Patient <b>REFUSED</b> (Add a note as to why the PT Refused)</p>
+        </div>
+
+        <div id="transfer-complete-referrals" class="step hidden">
+            <p>Transfer Complte Procedure : Excel Sheet > ECW > Excel Sheet</p>
         </div>
 
         <div id="transfer-complete" class="step hidden">
