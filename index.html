@@ -204,7 +204,36 @@
         </div>
     
         <div id="next-united" class="step hidden">
-            <p>UHC Pathway cont.</p>
+            <p>*Make sure that the Member's Name and <br> Date of Birth match what you have*</b></p>
+            <br>
+            <div class="container">
+                <div class="EBG-top">
+                    <img src="uhc-elg-details.png" alt="Error">
+                </div>
+            </div>
+            <br>
+            <p>What is the <b>Member Status</b>?</p>
+            <br>
+            <button class="btn" onclick="selectOption('next-united-1', 'next-united-active', 'next-united')">Active</button>
+            <button class="btn" onclick="selectOption('next-united-2', 'next-united-inactive', 'next-united')">Inactive</button>
+        </div>
+
+        <div id="next-united-active" class="step hidden">
+            <p>Go to: <br><br> <a target="_blank" href="https://www.lacare.org/providers">lacare.org</a></p>
+            <br>
+            <p>Is the patient assigned to <br><b>PPG: SERENDIB HEALTHYWAYS, INC</b>?<br> <br> and <br> <br><b>Primary Care Physician/Clinic:</b> One of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a> </p>
+            <br>
+            <button class="btn" onclick="selectOption('next-united-active-1', 'next-united-active-next', 'next-united-active')">Next</button>
+        </div>
+
+        <div id="next-united-active-next" class="step hidden">
+            <p>Is the patient assigned to <br><b>PPG: SERENDIB HEALTHYWAYS, INC</b>?<br> <br> and <br> <br><b>Primary Care Physician/Clinic:</b> One of our providers? <br> See:<a target="_blank" href="https://www.ktdoctor.com/our-doctors/">ktdoctor.com/our-doctors</a> </p>
+            <br>
+            <button class="btn" onclick="selectOption('next-united-active-1', 'next-united-active-next', 'next-united-active')">Next</button>
+        </div>
+
+        <div id="next-united-inactive" class="step hidden">
+            <p>Inactive <br> (Peds offer CHDP for Physicals and Vaccines Only)</p>
         </div>
     
         <div id="lacare-cm" class="step hidden">
